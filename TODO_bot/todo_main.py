@@ -51,13 +51,13 @@ def set_language_query_handler(call):
 
 @bot.message_handler(commands=["register"])
 def register_student_handler(message):
-    bot.send_message(message.chat.id, "Введите Имя:")
+    bot.send_message(message.chat.id, "Enter your name:")
     bot.set_state(message.from_user.id, StudentRegistration.first_name, message.chat.id)
 
 
 @bot.message_handler(state=StudentRegistration.first_name)
 def first_name_get(message):
-    bot.send_message(message.chat.id, 'Введите Фамилию:')
+    bot.send_message(message.chat.id, 'Enter your surname:')
     bot.set_state(message.from_user.id, StudentRegistration.last_name, message.chat.id)
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['first_name'] = message.text
@@ -65,7 +65,7 @@ def first_name_get(message):
 
 @bot.message_handler(state=StudentRegistration.last_name)
 def last_name_get(message):
-    bot.send_message(message.chat.id, 'Отправьте телефон номер:', reply_markup=phone)
+    bot.send_message(message.chat.id, 'Send your phone number:', reply_markup=phone)
     bot.set_state(message.from_user.id, StudentRegistration.phone, message.chat.id)
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['last_name'] = message.text
@@ -73,7 +73,7 @@ def last_name_get(message):
 
 @bot.message_handler(state=StudentRegistration.phone, content_types=["contact"])
 def phone_get(message):
-    bot.send_message(message.chat.id, 'Введите возраст:', reply_markup=ReplyKeyboardRemove())
+    bot.send_message(message.chat.id, 'Enter your age:', reply_markup=ReplyKeyboardRemove())
     bot.set_state(message.from_user.id, StudentRegistration.age, message.chat.id)
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['phone'] = message.contact.phone_number
@@ -104,7 +104,7 @@ def get_task_handler(message):
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['course'] = message.text
         messagess = f"Была получена следующая информация:\n"
-        messagess += f"Имя -->: {data.get('first_name')}\n"
+        messagess += f" -->: {data.get('first_name')}\n"
         messagess += f"Фамилия -->: {data.get('last_name')}\n"
         messagess += f"Телефон -->: {data.get('phone')}\n"
         messagess += f"Возраст -->: {data.get('age')}\n"

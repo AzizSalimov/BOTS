@@ -3,7 +3,7 @@ from environs import Env
 
 env = Env()
 env.read_env()
-BOT_TOKEN = env("BOT_TOKEN")
+BOT_TOKEN = '6385019069:AAFxRYzQLaJ5kU-dFvFagAIHKkfMndaY7qk'
 bot = telebot.TeleBot(BOT_TOKEN)
 
 
