@@ -104,15 +104,15 @@ def get_task_handler(message):
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['course'] = message.text
         messagess = f"Была получена следующая информация:\n"
-        messagess += f" -->: {data.get('first_name')}\n"
-        messagess += f"Фамилия -->: {data.get('last_name')}\n"
-        messagess += f"Телефон -->: {data.get('phone')}\n"
+        messagess += f"Name -->: {data.get('first_name')}\n"
+        messagess += f"Surname -->: {data.get('last_name')}\n"
+        messagess += f"Phone number -->: {data.get('phone')}\n"
         messagess += f"Возраст -->: {data.get('age')}\n"
-        messagess += f"Язык -->: {data.get('language')}\n"
-        messagess += f"Курс -->: {data.get('course')}\n"
+        messagess += f"Language -->: {data.get('language')}\n"
+        messagess += f"Course -->: {data.get('course')}\n"
         messagess += "Созранить эти данные ?\n"
-        messagess += "ДА -> \n"
-        messagess += "НЕТ -> "
+        messagess += "Yes -> \n"
+        messagess += "No -> "
         bot.send_message(message.chat.id, messagess, reply_markup=csv_file('save'))
 
 
