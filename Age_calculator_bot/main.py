@@ -13,7 +13,7 @@ def welcome_message(message):
     user = message.from_user
     bot.send_message(chat_id,
                      f"Hello {user.first_name} \n"
-                     f"Задача этого бота находить ваш возраст")
+                     f"The task of this bot is to find your age")
 
 
 @bot.message_handler(func=lambda message: int)
