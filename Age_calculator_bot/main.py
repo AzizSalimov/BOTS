@@ -12,7 +12,7 @@ def welcome_message(message):
     chat_id = message.chat.id
     user = message.from_user
     bot.send_message(chat_id,
-                     f"Привет {user.first_name} \n"
+                     f"Hello {user.first_name} \n"
                      f"Задача этого бота находить ваш возраст")
 
 
