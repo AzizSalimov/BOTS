@@ -1,5 +1,5 @@
 import requests
-from BOTS.weather_bot.config import BOT_TOKEN, wether_api
+from weather_bot.config import BOT_TOKEN, wether_api
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor

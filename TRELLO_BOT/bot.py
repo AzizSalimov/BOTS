@@ -10,7 +10,7 @@ from keyboards import get_inline_boards, get_inline_lists_btn, \
 
 env = Env()
 env.read_env()
-BOT_TOKEN = env("BOT_TOKEN")
+BOT_TOKEN = "6385019069:AAFxRYzQLaJ5kU-dFvFagAIHKkfMndaY7qk"
 state_storage = telebot.storage.StateMemoryStorage()
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode='html')
 

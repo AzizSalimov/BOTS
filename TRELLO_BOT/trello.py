@@ -8,8 +8,8 @@ env.read_env()
 
 
 class TrelloManager:
-    KEY = env("TRELLO_KEY")
-    TOKEN = env("TRELLO_TOKEN")
+    TOKEN = 'ATTAf239568721bcc9e1f8287eff0f668e12937b217eef5e0c024746a04391b27f1f3B86744C'
+    KEY = '0a0dd946a3a0b525997c63e2fe3060f1'
 
     def __init__(self, username):
         self.username = username

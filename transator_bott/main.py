@@ -2,7 +2,8 @@ from googletrans import Translator
 
 import aiogram
 import config as cfg
-from BOTS.transator_bott import keyboard as k
+from transator_bott import keyboard as k
+
 from aiogram import types
 import sqlite3
 

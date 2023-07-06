@@ -1,4 +1,4 @@
-TOKEN = '6173240647:AAFkPZ4Vm8DiN0XWmdkYBlGBdFDIOMzR9aE'
+TOKEN = '6385019069:AAFxRYzQLaJ5kU-dFvFagAIHKkfMndaY7qk'
 
 STARTMSG = "Hi, i am translator bot. I use python and google API. "
 CHOOSEMSG = "Choose language"
